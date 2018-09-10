@@ -1,0 +1,43 @@
+<!DOCTYPE>
+<html>
+<head>
+  <style>
+  div {
+    display: inline-block;
+    border: 1px solid black;
+    box-sizing: border-box;
+    width: 33%;
+    min-height: 100px;
+  }
+  .red {
+    background-color: red;
+  }
+  .green {
+    background-color: green;
+  }
+  </style>
+</head>
+<body>
+  <div>a</div>
+  <div>b</div>
+  <div>c</div>
+  <div>d</div>
+  <div>e</div>
+  <div>f</div>
+  <div>g</div>
+  <div>h</div>
+  <div>i</div>
+    <script>
+      let clickEventHandler = (e) => {
+        if (e.target.classList.contains('green')) {
+          e.target.classList.remove('green');
+          e.target.classList.add('red');
+        } else {
+          e.target.classList.remove('red');
+          e.target.classList.add('green');
+        }
+      }
+      Array.from(document.getElementsByTagName('div')).forEach(div => {console.log(div);div.addEventListener('click', clickEventHandler)});
+    </script>
+</body>
+</html>
